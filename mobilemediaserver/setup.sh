@@ -1,5 +1,11 @@
 #! /bin/bash
 
+# Update Omega2 opkg
+opkg update
+
+# Don't upgrade yet all its apps and libs as it seems it breaks things...
+# eval $(opkg list_installed | sed 's/ - .*//' | sed 's/^/opkg upgrade /')
+
 # Install minidlna and its dependency
 
 wget http://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/libexif_0.6.21-1_mipsel_24kc.ipk
