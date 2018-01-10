@@ -1,5 +1,5 @@
 Tips and tricks
 ---------------
 
-If the console seems broken, displaying a list of files instead of the nice UI, use this direct URL:
+If the console seems broken, displaying a list of files (something like: "Index of /console/") instead of the nice UI, use this direct URL:
 http://192.168.3.1/setup-wizard/
