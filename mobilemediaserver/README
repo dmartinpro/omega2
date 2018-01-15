@@ -1,6 +1,20 @@
 How to use the script
 ---------------------
 
+From a brand new Omega2, start with the default configure procedure:
+Connect to Omega2's wifi AP with default password (12345678)
+Follow the web wizard using the URL
+
+    http://192.168.3.1/
+
+Install the console at the end
+Connect to the console (root/onioneer)
+Set all the stuff up (timezone, wifi, new AP password)
+
+And install Minidlna using the following instructions.
+
+---------
+
 Connect to Omega2:
 
     ssh root@wherever.it.is
