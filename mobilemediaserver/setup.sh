@@ -15,8 +15,10 @@ opkg update
 
 wget http://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/$LIBEXIF
 opkg install $LIBEXIF
+rm $LIBEXIF
 wget http://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/$MINIDLNA
 opkg install $MINIDLNA
+rm $MINIDLNA
 
 # Get the configuration
 wget https://raw.githubusercontent.com/dmartinpro/omega2/master/mobilemediaserver/minidlna.conf
@@ -29,11 +31,15 @@ sed -i -e 's/\/usr\/bin\/minidlna -f/\/usr\/bin\/minidlna -r -f/g' /etc/init.d/m
 # Install network tool BWM-NG
 wget http://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/$BWMNG
 opkg install $BWMNG
+rm $BWMNG
 
 # enable minidlna
 /etc/init.d/minidlna enable
 
 # reload the configuration
 /etc/init.d/minidlna reload
+
+# Housekeeping...
+rm setup.sh
 
 echo "Everything is (should be) ok, now add media to the microsd card"
