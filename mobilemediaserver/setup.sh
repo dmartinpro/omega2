@@ -1,9 +1,9 @@
 #! /bin/sh
 
-# Update Omega2 opkg
+# Update Omega2 opkg cache
 opkg update
 
-# Don't upgrade yet all its apps and libs as it seems it breaks things...
+# Don't upgrade yet all Omega2's apps and libs as it seems it breaks things...
 # eval $(opkg list_installed | sed 's/ - .*//' | sed 's/^/opkg upgrade /')
 
 # Install minidlna and its dependency
@@ -31,4 +31,4 @@ opkg install bwm-ng_0.6.1-1_mipsel_24kc.ipk
 # reload the configuration
 /etc/init.d/minidlna reload
 
-echo "Everything is ok"
+echo "Everything is (should be) ok, now add media to the microsd card"
