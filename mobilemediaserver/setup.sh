@@ -13,10 +13,10 @@ opkg update
 
 # Install minidlna and its dependency
 
-wget http://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/$LIBEXIF
+wget https://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/$LIBEXIF
 opkg install $LIBEXIF
 rm $LIBEXIF
-wget http://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/$MINIDLNA
+wget https://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/$MINIDLNA
 opkg install $MINIDLNA
 rm $MINIDLNA
 
@@ -29,7 +29,7 @@ sed -i -e 's/START=50/START=99/g' /etc/init.d/minidlna
 sed -i -e 's/\/usr\/bin\/minidlna -f/\/usr\/bin\/minidlna -r -f/g' /etc/init.d/minidlna
 
 # Install network tool BWM-NG
-wget http://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/$BWMNG
+wget https://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/$BWMNG
 opkg install $BWMNG
 rm $BWMNG
 
