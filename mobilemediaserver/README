@@ -1,3 +1,21 @@
+How to use the script
+---------------------
+
+Connect to Omega2:
+
+    ssh root@wherever.it.is
+
+(default password is 'onioneer')
+
+Download the script:
+
+    wget https://raw.githubusercontent.com/dmartinpro/omega2/master/mobilemediaserver/setup.sh
+
+And execute it:
+
+    ./setup.sh
+
+
 Tips and tricks
 ---------------
 
