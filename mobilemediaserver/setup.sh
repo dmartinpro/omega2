@@ -1,5 +1,10 @@
 #! /bin/sh
 
+
+LIBEXIF=libexif_0.6.21-1_mipsel_24kc.ipk
+MINIDLNA=minidlna_1.2.1-2_mipsel_24kc.ipk
+BWMNG=bwm-ng_0.6.1-1_mipsel_24kc.ipk
+
 # Update Omega2 opkg cache
 opkg update
 
@@ -8,10 +13,10 @@ opkg update
 
 # Install minidlna and its dependency
 
-wget http://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/libexif_0.6.21-1_mipsel_24kc.ipk
-opkg install libexif_0.6.21-1_mipsel_24kc.ipk
-wget http://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/minidlna_1.2.1-2_mipsel_24kc.ipk
-opkg install minidlna_1.2.1-2_mipsel_24kc.ipk
+wget http://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/$LIBEXIF
+opkg install $LIBEXIF
+wget http://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/$MINIDLNA
+opkg install $MINIDLNA
 
 # Get the configuration
 wget https://raw.githubusercontent.com/dmartinpro/omega2/master/mobilemediaserver/minidlna.conf
@@ -22,8 +27,8 @@ sed -i -e 's/START=50/START=99/g' /etc/init.d/minidlna
 sed -i -e 's/\/usr\/bin\/minidlna -f/\/usr\/bin\/minidlna -r -f/g' /etc/init.d/minidlna
 
 # Install network tool BWM-NG
-wget http://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/bwm-ng_0.6.1-1_mipsel_24kc.ipk
-opkg install bwm-ng_0.6.1-1_mipsel_24kc.ipk 
+wget http://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/$BWMNG
+opkg install $BWMNG
 
 # enable minidlna
 /etc/init.d/minidlna enable
