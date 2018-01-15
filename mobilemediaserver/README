@@ -13,8 +13,12 @@ Download the script:
 
 And execute it:
 
-    ./setup.sh
+    chmod +x setup.sh && ./setup.sh
 
+
+Or, with a single command:
+
+    ssh -t root@wherever.it.is 'wget https://raw.githubusercontent.com/dmartinpro/omega2/master/mobilemediaserver/setup.sh && chmod +x setup.sh && ./setup.sh'
 
 Tips and tricks
 ---------------
