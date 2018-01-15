@@ -41,5 +41,6 @@ rm $BWMNG
 
 # Housekeeping...
 rm setup.sh
+rm .wget*
 
 echo "Everything is (should be) ok, now add media to the microsd card"
