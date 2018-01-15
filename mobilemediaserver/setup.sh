@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 
 # Update Omega2 opkg
 opkg update
@@ -17,9 +17,9 @@ opkg install minidlna_1.2.1-2_mipsel_24kc.ipk
 wget https://raw.githubusercontent.com/dmartinpro/omega2/master/mobilemediaserver/minidlna.conf
 mv minidlna.conf /etc/config/minidlna
 
-# Change a few things in order
-sed -i -e 's/START=50/START=99/g' /etc/init.d/minidnla
-sed -i -e 's/\/usr\/bin\/minidlna -f/\/usr\/bin\/minidlna -R -f/g' /etc/init.d/minidlna
+# Change a few things in order to let the service works as expected (late start and perform a rebuild action of the database)
+sed -i -e 's/START=50/START=99/g' /etc/init.d/minidlna
+sed -i -e 's/\/usr\/bin\/minidlna -f/\/usr\/bin\/minidlna -r -f/g' /etc/init.d/minidlna
 
 # Install network tool BWM-NG
 wget http://downloads.lede-project.org/snapshots/packages/mipsel_24kc/packages/bwm-ng_0.6.1-1_mipsel_24kc.ipk
