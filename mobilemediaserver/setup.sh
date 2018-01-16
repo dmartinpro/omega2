@@ -43,4 +43,17 @@ rm $BWMNG
 rm setup.sh
 rm .wget*
 
+# Install power-dock package
+opkg install power-dock
+
+# Switch on power LED every minutes
+#(crontab -l 2>/dev/null; echo "*/1 * * * * /power-dock -with args") | crontab -
+#/etc/init.d/cron restart
+
+# Switch on power LED every 10 seconds
+wget https://raw.githubusercontent.com/dmartinpro/omega2/master/mobilemediaserver/battery-level.sh
+chmod +x battery-level.sh
+sed -i -e 's/exit 0/sh \/root\/battery-level.sh\n\nexit 0/g' /etc/rc.local 
+
+# All done
 echo "Everything is (should be) ok, now add media to the microsd card"
